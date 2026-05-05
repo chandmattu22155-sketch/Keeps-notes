@@ -14,7 +14,7 @@ function Notes({ notes, updateNote, deleteNote }) {
 
  
 
-  const colors = ["ffffff", "a2d2ff", "83c5be", "ff99c8", "e4c1f9", "f4b942"];
+  const colors = ["ffffff","bde0fe","ffafcc","ffb703","c77dff","17c3b2","1b98e0"];
 
   const handleFormat = (command, value = null) => {
     document.execCommand(command, false, value);

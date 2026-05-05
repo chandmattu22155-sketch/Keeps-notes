@@ -14,7 +14,7 @@ const { fileInputRef, handleClick, handleFileChange, notes, updateNote, deleteNo
     const formatMenuRef = useRef(null);
     const contentRef = useRef(null);    
 
-    const colors = ["ffffff", "a2d2ff", "83c5be", "ff99c8", "e4c1f9", "f4b942"];
+    const colors = ["ffffff","bde0fe","ffafcc","ffb703","c77dff","17c3b2","1b98e0"];
     const [bgColor, setBgColor] = useState("ffffff");
     const [title, setTitle] = useState("");
 

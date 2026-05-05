@@ -44,7 +44,7 @@ const Navbar = () => {
 
                 <button
                     onClick={() => signOut(auth)}
-                    className="bg-red-500 text-white px-2 py-1 rounded"
+                    className="bg-gray-400 text-white px-2 py-1 rounded"
                 >
                     Logout
                 </button>
@@ -56,3 +56,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

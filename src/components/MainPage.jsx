@@ -1,6 +1,6 @@
 import { Image, Palette, Bold, Italic, Underline as UnderlineIcon, Baseline,Trash2 } from 'lucide-react';
 import React, { useContext, useState, useRef, useEffect } from 'react';
-import { AppContext } from '../context/AppContext';
+import { AppContext } from '../context/Appcontext';
 import Notes from "../components/Notes";
 
 function MainPage() {

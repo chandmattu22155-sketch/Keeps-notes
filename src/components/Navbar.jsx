@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Search, Settings, RotateCw, TextAlignJustify } from 'lucide-react';
-import { AppContext } from '../context/AppContext';
+import { AppContext } from '../context/Appcontext';
 import { getAuth, signOut } from "firebase/auth";
 import { app } from "../firebase/firebase";
 import { auth } from "../firebase/firebase";

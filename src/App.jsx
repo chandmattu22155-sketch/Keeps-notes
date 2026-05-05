@@ -4,7 +4,8 @@ import Sidebar from './components/Sidebar'
 import MainPage from './components/MainPage'
 import Auth from './components/Auth'
 
-import { AppProvider, AppContext } from './context/AppContext'
+
+import { AppProvider, AppContext } from './context/Appcontext'
 import { useContext } from 'react'
 
 import { useAuthState } from "react-firebase-hooks/auth";

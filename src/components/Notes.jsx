@@ -1,6 +1,6 @@
 import { useState, useRef, useContext } from "react";
 import { Bold, Italic, Underline as UnderlineIcon, Baseline, Palette } from "lucide-react";
-import { AppContext } from "../context/AppContext"; 
+import { AppContext } from "../context/Appcontext"; 
 
 function Notes({ notes, updateNote, deleteNote }) {
   const { saveNote } = useContext(AppContext); 

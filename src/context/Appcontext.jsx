@@ -1,3 +1,4 @@
+
 import { createContext, useEffect, useState } from "react";
 import { db, auth } from '../firebase/firebase.js'; 
 import { collection, addDoc, getDocs, deleteDoc, doc, updateDoc, query, where } from "firebase/firestore";
@@ -9,6 +10,9 @@ export const AppProvider = ({ children }) => {
   const [showSidebar, setShowSidebar] = useState(true);
   const [notes, setNotes] = useState([]);
   const [user, setUser] = useState(null); 
+  const [searchTerm, setSearchTerm] = useState("");
+
+
 
   const notesCollection = collection(db, "notes");
 
@@ -28,7 +32,6 @@ export const AppProvider = ({ children }) => {
   const getNotes = async (uid) => {
     if (!uid) return;
     try {
-      
       const q = query(notesCollection, where("userId", "==", uid));
       const data = await getDocs(q);
       const filtered = data.docs.map(doc => ({
@@ -44,7 +47,6 @@ export const AppProvider = ({ children }) => {
   const saveNote = async (note) => {
     if (!user) return; 
 
-
     const tempDiv = document.createElement("div");
     tempDiv.innerHTML = note.content;
     if (!tempDiv.textContent.trim() && !note.title.trim()) return;
@@ -56,10 +58,8 @@ export const AppProvider = ({ children }) => {
         createdAt: new Date() 
       };
 
-   
       const docRef = await addDoc(notesCollection, newNoteData);
       
-     
       setNotes(prev => [
         ...prev,
         { ...newNoteData, id: docRef.id }
@@ -95,19 +95,25 @@ export const AppProvider = ({ children }) => {
     setShowSidebar(prev => !prev);
   };
 
+
   return (
     <AppContext.Provider
       value={{
         showSidebar,
         toggleSidebar,
         notes,
+        setNotes, 
         saveNote,
         deleteNote,
         updateNote,
-        user 
+        user,
+        searchTerm,
+        setSearchTerm
       }}
     >
       {children}
     </AppContext.Provider>
   );
 };
+
+

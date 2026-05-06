@@ -1,6 +1,5 @@
 import './App.css'
 import Navbar from './components/Navbar'
-import Sidebar from './components/Sidebar'
 import MainPage from './components/MainPage'
 import Auth from './components/Auth'
 
@@ -16,7 +15,7 @@ function Layout() {
 
   return (
     <div className='flex'>
-      {showSidebar && <Sidebar />}
+    
 
       <div className='flex-1'>
         <Navbar />
